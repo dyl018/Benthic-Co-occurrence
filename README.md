@@ -5,21 +5,27 @@ Python code for calculation of co-occurrence metrics for benthic observational d
 3. Statistical analysis of similarity results to identify pixel size thresholds and plotting of results.
 
 # Benthic Reclassification
-_See_ `01_reclassify_field_data.py`
+Each section of the script `01_reclassify_field_data.py` is outlined here, including key processing steps and requirements from the user.
 
 > [!IMPORTANT]
 > **Required modules** to run this script:
-> [Pandas](https://pypi.org/project/pandas/), [PyProj](https://pypi.org/project/pyproj/), [Glob](https://docs.python.org/3/library/glob.html), [GeoPandas](https://pypi.org/project/geopandas/), [NumPy](https://pypi.org/project/numpy/), [Shapely](https://pypi.org/project/shapely/), and [os](https://docs.python.org/3/library/os.html)
+> [Pandas](https://pypi.org/project/pandas/), [NumPy](https://pypi.org/project/numpy/), [PyProj](https://pypi.org/project/pyproj/), [GeoPandas](https://pypi.org/project/geopandas/), [Shapely](https://pypi.org/project/shapely/), [glob](https://docs.python.org/3/library/glob.html), and [os](https://docs.python.org/3/library/os.html)
+
+### (1) User Input
+The key inputs for this script are defined here including: (a) the site ID used in the input data to identify the field site, (b) the working directory path, and (c) the remapping used to group the benthic classes from image classification into thematic classes used for subsequent co-occurrence calculations.
+
+> [!NOTE]
+> The remappings here are defined in two input files (`labelmap_reefcloud.csv` and `labelmap_coralnet.csv`) which are not provided. However, a similar remapping that is shown for the EB site in this script is used. Essentially, the detailed benthic data used as input is aggregated into simpler thematic classes, representing classes that are typically identified via satellite-based remote sensing approaches.
 
 # Co-occurrence Calculation
-_See_ `02_cooccurrence.py`
+Each section of the script `02_cooccurrence.py` is outlined here, including key processing steps and requirements from the user.
 
 > [!IMPORTANT]
 > **Required modules** to run this script:
 > [Pandas](https://pypi.org/project/pandas/), [NumPy](https://pypi.org/project/numpy/), [SciPy](https://pypi.org/project/scipy/), [alive-progress](https://pypi.org/project/alive-progress/), and [os](https://docs.python.org/3/library/os.html)
 
 # Benthic Reclassification
-_See_ `03_summary_stats.py`
+Each section of the script `03_summary_stats.py` is outlined here, including key processing steps and requirements from the user.
 
 > [!IMPORTANT]
 > **Required modules** to run this script:
