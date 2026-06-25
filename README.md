@@ -7,8 +7,35 @@ Python code for calculation of co-occurrence metrics for benthic observational d
 # Benthic Reclassification
 _See_ `01_reclassify_field_data.py`
 
+## Required Packages
+This processing script requires the following modules to function:
+- [Pandas](https://pypi.org/project/pandas/)
+- [PyProj](https://pypi.org/project/pyproj/)
+- [Glob](https://docs.python.org/3/library/glob.html)
+- [GeoPandas](https://pypi.org/project/geopandas/)
+- [NumPy](https://pypi.org/project/numpy/)
+- [Shapely](https://pypi.org/project/shapely/)
+- [os](https://docs.python.org/3/library/os.html)
+
 # Co-occurrence Calculation
 _See_ `02_cooccurrence.py`
 
+## Required Packages
+This processing script requires the following modules to function:
+- [Pandas](https://pypi.org/project/pandas/)
+- [NumPy](https://pypi.org/project/numpy/)
+- [SciPy](https://pypi.org/project/scipy/)
+- [alive-progress](https://pypi.org/project/alive-progress/)
+- [os](https://docs.python.org/3/library/os.html)
+
 # Benthic Reclassification
 _See_ `03_summary_stats.py`
+
+## Required Packages
+This processing script requires the following modules to function:
+- [Pandas](https://pypi.org/project/pandas/)
+- [NumPy](https://pypi.org/project/numpy/)
+- [SciPy](https://pypi.org/project/scipy/)
+- [Matplotlib](https://pypi.org/project/matplotlib/)
+- [seaborn](https://pypi.org/project/seaborn/)
+- [os](https://docs.python.org/3/library/os.html)
