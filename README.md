@@ -5,7 +5,7 @@ Python code for calculation of co-occurrence metrics for benthic observational d
 3. Statistical analysis of similarity results to identify pixel size thresholds and plotting of results.
 
 # Benthic Reclassification
-Each section of the script `01_reclassify_field_data.py` is outlined here, including key processing steps and requirements from the user.
+See: `01_reclassify_field_data.py`
 
 > [!IMPORTANT]
 > **Required modules** to run this script:
@@ -19,7 +19,7 @@ The key inputs for this script are defined in the USER INPUT section, including:
 Data is read from the input `.csv` files, then aggregated into broader thematic classes. Extra data is removed and column headers are checked for consistency, to streamline further processing. A filter is applied to the dataset to remove photoquadrats where <90% of the defined benthic cover is **not** covered by the desired thematic classes. For example, if an input point is comprised of >10% "Other" (mobile invertebrates, fish, survey gear, etc.) it is removed from the dataset. Further quality controls are focused on confirming coordinates and assigning each point to a geomorphic zone or subregion within the study site.
 
 # Co-occurrence Calculation
-Each section of the script `02_cooccurrence.py` is outlined here, including key processing steps and requirements from the user.
+See: `02_cooccurrence.py`
 
 > [!IMPORTANT]
 > **Required modules** to run this script:
@@ -41,7 +41,7 @@ J(B_i, B_j) = \dfrac{|B_i \cap B_j|}{|B_i \cup B_j|} = \dfrac{|B_i \cap B_j}{|B_
 For $i=1,...,n$ and $j=1,...,m$ where $J(B_i, B_j)$ is the Jaccard similarity index, $\cap$ represents the intersection and $\cup$ represents the union between two sets of benthic features. $B_i$ represents the presence of features from the first benthic group, and $B_j$ represents presence from the second group.
 
 # Summary Statistics
-Each section of the script `03_summary_stats.py` is outlined here, including key processing steps and requirements from the user.
+See: `03_summary_stats.py`
 
 > [!IMPORTANT]
 > **Required modules** to run this script:
