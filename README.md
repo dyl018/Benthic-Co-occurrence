@@ -35,7 +35,9 @@ Key user inputs for this script include:
 The remainder of the script will then apply spatial filters to perform calculations in the desired zone, before conducting the similarity analysis on the filtered subset. Presence/absence matrices are constructed for each unique thematic class pair, based on the aggregated classes from the previous script. The pixel sizes are used to define the search radius around each point to identify which benthic features are present within difference pixels across the study site. The presence/absence matrices are then used to determine the Jaccard similarity metric, used here as a proxy for co-occurrence likelihood. Basic statistics (e.g., mean and variance) are calculated from the similarity metrics calculated across each year, geomorphic zone, and pixel size.
 
 The Jaccard calculation is as follows:
-$J(B_i, B_j) = \dfrac{|B_i \cap B_j|}{|B_i \cup B_j|} = \dfrac{|B_i \cap B_j}{|B_i|+|B_j|-|B_i \cap B_j|}
+```math
+J(B_i, B_j) = \dfrac{|B_i \cap B_j|}{|B_i \cup B_j|} = \dfrac{|B_i \cap B_j}{|B_i|+|B_j|-|B_i \cap B_j|}
+```
 For $i=1,...,n$ and $j=1,...,m$ where $J(B_i, B_j)$ is the Jaccard similarity index, $\cap$ represents the intersection and $\cup$ represents the union between two sets of benthic features. $B_i$ represents the presence of features from the first benthic group, and $B_j$ represents presence from the second group.
 
 # Summary Statistics
