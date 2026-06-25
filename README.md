@@ -14,22 +14,13 @@ _See_ `01_reclassify_field_data.py`
 # Co-occurrence Calculation
 _See_ `02_cooccurrence.py`
 
-## Required Packages
-This processing script requires the following modules to function:
-- [Pandas](https://pypi.org/project/pandas/)
-- [NumPy](https://pypi.org/project/numpy/)
-- [SciPy](https://pypi.org/project/scipy/)
-- [alive-progress](https://pypi.org/project/alive-progress/)
-- [os](https://docs.python.org/3/library/os.html)
+> [!IMPORTANT]
+> **Required modules** to run this script:
+> [Pandas](https://pypi.org/project/pandas/), [NumPy](https://pypi.org/project/numpy/), [SciPy](https://pypi.org/project/scipy/), [alive-progress](https://pypi.org/project/alive-progress/), and [os](https://docs.python.org/3/library/os.html)
 
 # Benthic Reclassification
 _See_ `03_summary_stats.py`
 
-## Required Packages
-This processing script requires the following modules to function:
-- [Pandas](https://pypi.org/project/pandas/)
-- [NumPy](https://pypi.org/project/numpy/)
-- [SciPy](https://pypi.org/project/scipy/)
-- [Matplotlib](https://pypi.org/project/matplotlib/)
-- [seaborn](https://pypi.org/project/seaborn/)
-- [os](https://docs.python.org/3/library/os.html)
+> [!IMPORTANT]
+> **Required modules** to run this script:
+> [Pandas](https://pypi.org/project/pandas/), [NumPy](https://pypi.org/project/numpy/), [SciPy](https://pypi.org/project/scipy/), [Matplotlib](https://pypi.org/project/matplotlib/), [seaborn](https://pypi.org/project/seaborn/), and [os](https://docs.python.org/3/library/os.html)
