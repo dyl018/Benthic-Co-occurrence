@@ -21,20 +21,20 @@ import os
 SITE = 'HR' # define site: HR = Heron Reef, EB = Eastern Banks
 
 # --------------- (b) define working directory ---------------
-ROOT = r'C:\Users\dcowl\OneDrive - The University of Queensland\Work PC\Documents\02_smartsat\data\ReefCloud'
+ROOT = r'C:\Users\path\to\data'
 
 # --------------- (c) define remapping ---------------
 # mapping to reassign: ReefCloud Benthic Class --> Thematic Group
 if SITE == 'HR':
-    input_fldr = ROOT+'/'+SITE+r'_data\FieldData\03_output_linked'
-    output_fldr = ROOT+'/'+SITE+r'_data\FieldData\04_output_reclassified'
+    input_fldr = os.path.join(ROOT,SITE,'\FieldData\input')
+    output_fldr = os.path.join(ROOT,SITE,'\FieldData\output')
     filter_mapping_coralnet = pd.read_csv(os.path.join(output_fldr, 'labelmap_coralnet.csv'),
                                           low_memory=False)
     filter_mapping_reefcloud = pd.read_csv(os.path.join(output_fldr, 'labelmap_reefcloud.csv'),
                                           low_memory=False)
 elif SITE == 'EB':
-    input_fldr = ROOT+'/'+SITE+'_data'
-    output_fldr = ROOT+'/'+SITE+'_data'
+    input_fldr = os.path.join(ROOT,SITE+'_data')
+    output_fldr = input_fldr
     filter_mapping = {
         'All.other': 'Other',
         'Anemone': 'Other',

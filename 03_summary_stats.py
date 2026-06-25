@@ -41,9 +41,64 @@ elif SITE == 'EB':
 SAVE_FIGURE = 'no' # yes or no
 
 # --------------- (b) define working directory ---------------
-ROOT = r'C:\Users\dcowl\OneDrive - The University of Queensland\Work PC\Documents\02_smartsat'
-PWD = ROOT+r'\output\benthic_cooccurrence'+'/'+BENTHIC_TYPE
-FIGPATH = ROOT+r'\figures\co-occurrence'+'/'+BENTHIC_TYPE
+ROOT = r'C:\Users\path\to\data'
+PWD = os.path.join(ROOT,'output\benthic_cooccurrence',BENTHIC_TYPE)
+FIGPATH = os.path.join(ROOT,'figures\co-occurrence',BENTHIC_TYPE)
+
+# --------------- (c) thematic class colour palettes ---------------
+colpals_coral = {
+            'hard_coral': '#FF91A4',
+            'soft_coral': '#C41E3A',
+            'sand': '#C19A6B',
+            'macroalgae': '#6B8E23',
+            'turf_cca': '#008B8B'
+        }
+
+colpals_seagrass_dense = {
+                'Dense': '#006937',
+                'Sparse': '#75c376',
+                'Algae': '#e7298a',
+                'Lyngbya': '#000000',
+                'Sand': '#fcf7c1'
+            }
+
+colpals_seagrass_species = {
+                'Serrulata': '#006937',
+                'Muelleri': '#248b45',
+                'Uninervis': '#75c376',
+                'Isoetifolium': '#c8e4bf',
+                'Spinulosa': '#2272b5',
+                'Ovalis': '#9ecae1',
+                'Algae': '#e7298a',
+                'Lyngbya': '#000000',
+                'Sand': '#fcf7c1'
+            }
+
+# --------------- (d) geomorphic zone colour palettes ---------------
+# define colour palette
+if SITE == 'HR':
+    zone_colours = {
+        "all": "#808080",                  
+        "Reef_Flat_Inner": "#B50609",
+        "Reef_Flat_Outer": "#FC8D59",     
+        "Reef_Slope_South": "#4575B4",
+        "Reef_Slope_North": "#C7EBFF"   
+        }
+    legend_labels = {
+        "all": "All zones",
+        "Reef_Flat_Inner": "Reef Flat Inner",
+        "Reef_Flat_Outer": "Reef Flat Outer",
+        "Reef_Slope_South": "Reef Slope South",
+        "Reef_Slope_North": "Reef Slope North"
+    }
+elif SITE == 'EB':
+    zone_colours = {
+        "all": "#808080",                  
+        "Amity": "#D7191C",
+        "Maroom": "#1A9641",     
+        "Moreton": "#5E3C99",
+        "WangaWallen": "#2B83BA"
+        }
 
 # %% (2) READ DATA
 df_all = []
@@ -162,13 +217,7 @@ for selected_gz in GZ_LIST:
             'Soft Coral-Sand'
         ]
         # define colours for each thematic group
-        fg_colours = {
-            'hard_coral': '#FF91A4',
-            'soft_coral': '#C41E3A',
-            'sand': '#C19A6B',
-            'macroalgae': '#6B8E23',
-            'turf_cca': '#008B8B'
-        }
+        fg_colours = colpals_coral
     elif SITE == 'EB':
         if OPT == 'dense':
             fg_pairs = [
@@ -196,13 +245,7 @@ for selected_gz in GZ_LIST:
                 'Lyngbya-Sand'
             ]
             # define colours for each thematic group
-            fg_colours = {
-                'Dense': '#006937',
-                'Sparse': '#75c376',
-                'Algae': '#e7298a',
-                'Lyngbya': '#000000',
-                'Sand': '#fcf7c1'
-            }
+            fg_colours = colpals_seagrass_dense
         elif OPT == 'species':
             fg_pairs = [
                 ('Serrulata', 'Muelleri'),
@@ -281,17 +324,7 @@ for selected_gz in GZ_LIST:
                 'Lyngbya-Sand',
             ]
             # define colours for each thematic group
-            fg_colours = {
-                'Serrulata': '#006937',
-                'Muelleri': '#248b45',
-                'Uninervis': '#75c376',
-                'Isoetifolium': '#c8e4bf',
-                'Spinulosa': '#2272b5',
-                'Ovalis': '#9ecae1',
-                'Algae': '#e7298a',
-                'Lyngbya': '#000000',
-                'Sand': '#fcf7c1'
-            }
+            fg_colours = colpals_seagrass_species
     
     # plot each pair
     for i, pair in enumerate(fg_pairs):
@@ -507,31 +540,6 @@ for selected_gz in GZ_LIST:
 # %% (6) SIMILARITY VARIABILITY
 # --------------- (a) plotting setup --------------- 
 df_combined = pd.concat(df_all, ignore_index=True)
-
-# define colour palette
-if SITE == 'HR':
-    zone_colours = {
-        "all": "#808080",                  
-        "Reef_Flat_Inner": "#B50609",
-        "Reef_Flat_Outer": "#FC8D59",     
-        "Reef_Slope_South": "#4575B4",
-        "Reef_Slope_North": "#C7EBFF"   
-        }
-    legend_labels = {
-        "all": "All zones",
-        "Reef_Flat_Inner": "Reef Flat Inner",
-        "Reef_Flat_Outer": "Reef Flat Outer",
-        "Reef_Slope_South": "Reef Slope South",
-        "Reef_Slope_North": "Reef Slope North"
-    }
-elif SITE == 'EB':
-    zone_colours = {
-        "all": "#808080",                  
-        "Amity": "#D7191C",
-        "Maroom": "#1A9641",     
-        "Moreton": "#5E3C99",
-        "WangaWallen": "#2B83BA"
-        }
 
 # --------------- (b) variability plots ---------------
 fig, ax = plt.subplots(figsize=(14, 8))

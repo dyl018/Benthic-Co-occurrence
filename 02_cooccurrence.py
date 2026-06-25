@@ -32,12 +32,9 @@ MAX_YR = 2025 # maximum year range for filtering
 THRESHOLD = 0 # for filtering percent cover
 
 # --------------- (b) define working directory ---------------
-ROOT = r'C:\Users\uqdcowl2\OneDrive - The University of Queensland\Work PC\Documents\02_smartsat'
-if SITE == 'HR':
-    pwd = ROOT+r'\data\ReefCloud\HR_data\FieldData\04_output_reclassified'
-elif SITE == 'EB':
-    pwd = ROOT+r'\data\ReefCloud\EB_data'
-OUTPUT_PATH = ROOT+r'output\benthic_cooccurrence'+'/'+BENTHIC_TYPE
+ROOT = r'C:\Users\path\to\data'
+PWD = os.path.join(ROOT,'ReefCloud',SITE+'_data','FieldData')
+OUTPUT_PATH = os.path.join(ROOT,'output\benthic_cooccurrence',BENTHIC_TYPE)
 df = pd.read_csv(os.path.join(pwd,SITE+'_benthic_adj.csv')) # read data
 
 # %% (2) APPLY FILTERS
