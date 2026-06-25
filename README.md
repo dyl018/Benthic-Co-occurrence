@@ -7,9 +7,9 @@ Python code for calculation of co-occurrence metrics for benthic observational d
 # Benthic Reclassification
 _See_ `01_reclassify_field_data.py`
 
-[!IMPORTANT]
-**Required modules** to run this script:
-- [Pandas](https://pypi.org/project/pandas/), [PyProj](https://pypi.org/project/pyproj/), [Glob](https://docs.python.org/3/library/glob.html), [GeoPandas](https://pypi.org/project/geopandas/), [NumPy](https://pypi.org/project/numpy/), [Shapely](https://pypi.org/project/shapely/), and [os](https://docs.python.org/3/library/os.html)
+> [!IMPORTANT]
+> **Required modules** to run this script:
+> [Pandas](https://pypi.org/project/pandas/), [PyProj](https://pypi.org/project/pyproj/), [Glob](https://docs.python.org/3/library/glob.html), [GeoPandas](https://pypi.org/project/geopandas/), [NumPy](https://pypi.org/project/numpy/), [Shapely](https://pypi.org/project/shapely/), and [os](https://docs.python.org/3/library/os.html)
 
 # Co-occurrence Calculation
 _See_ `02_cooccurrence.py`
